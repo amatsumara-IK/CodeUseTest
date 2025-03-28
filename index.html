@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cygre Light:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
+<!-- https://coolors.co/1c2321-7d98a1-5e6572-a9b4c2-eef1ef  -->
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon/fav_coffe_1.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>CodeUse | SF</title>
+    
+ 
+</head>
+
+<body>
+    <img id="img_1" src="./images/Picture_1.svg" alt="img" width="">
+    <img id="img_2" src="./images/Picture_2.svg" alt="img" width="">
+        
+    <div class="all-options">
+    <div class="options">
+        <p style="margin-bottom: 0px !important;"><input type="checkbox" data-checkbox="main" class="styled-checkbox" checked><span class="text-background">Обернуть код в main-block</span></p>
+        <p style="margin-bottom: 0px !important;"><input type="checkbox" data-checkbox="add_formulas" class="styled-checkbox" checked><span class="text-background">Добавить обертку <span class="text-strong-code">\(\)</span> под формулу</span></p>
+        <p style="margin-left: 28px !important; margin-top: 24px !important;"><span class="text-background">Изменить <span class="text-strong-code">&lt;pre class=...></span></span>
+        <select class="select" data-select="pre-language" id="pre-language-select">
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="javascript">JS</option>
+            <option value="cpp">C++</option>
+            <option value="csharp">C#</option>
+            <option value="justc">C</option>
+            <option value="php">PHP</option>
+            <option value="markup">HTML</option>
+            <option value="notxexe">Default</option>
+        </select>
+        </p>
+        
+        <p style="margin-bottom: 0px !important;"><input type="checkbox" data-checkbox="span-div" class="styled-checkbox" checked><span  class="text-background">Заменить <span class="text-strong-code">&lt;span></span> на <span class="text-strong-code">&lt;div></span> [imp|biblio]</span></p>
+        
+    </div>
+
+    <div class="options-delete">
+        <p style="margin-bottom: 0px !important;">Удалить: </p>
+    
+        <p style="margin-top: 8px !important;"><input type="checkbox" data-checkbox="deleteDiv" class="styled-checkbox"
+                checked><span  class="text-background"><span class="text-strong-code">&lt;div
+                                class="example-title"&gt;Пример&lt;/div&gt</span></span></p>
+        <p style="margin-top: 8px !important;"><input type="checkbox" data-checkbox="em" class="styled-checkbox"
+                checked><span class="text-background"><span class="text-strong-code">&lt;em> (курсив)</span></span></p>
+        <p style="margin-top: 8px !important;"><input type="checkbox" data-checkbox="DivClean" class="styled-checkbox"
+                checked><span class="text-background">Очистить стили у всех <span class="text-strong-code">&lt;div></span> <span class="text-strong-code" style="font-size: 13px !important; font-weight: lighter !important;">(кроме видео)</span></span> </p>
+    
+    
+    </div>
+    </div>
+
+    <div class="container-text">
+
+        <textarea id="inputText" class="work-area" placeholder="Введите код здесь..."></textarea>
+
+
+
+        <button id="transformButton">Преобразовать код</button>
+        <div class="output-container">
+            <textarea id="outputText" readonly></textarea>
+        </div>
+    </div>
+
+    
+
+
+    
+    <button class="fortune-button"><img src="./images/icon_A_fortune-telling_ball.svg" alt="Шар предсказаний" width="35"></button>
+    <div class="fortune-text" id="fortuneText"></div>
+    
+    
+    <script>
+        const emojis = ['🐵', '🐒', '🦍', '🦧', '🐶', '🐕', '🦮', '🐕‍🦺', '🐩', '🐺', '🦊', '🦝', '🐱', '🐈', '🐈‍⬛', '🦁', '🐯', '🐅', '🐆', '🐴', '🫎', '🫏', '🐎', '🦄', '🦓', '🦌', '🦬', '🐮', '🐂', '🐃', '🐄', '🐷', '🐖', '🐗', '🐽', '🐏', '🐑', '🐐', '🐪', '🐫', '🦙', '🦒', '🐘', '🦣', '🦏', '🦛', '🐭', '🐁', '🐀', '🐹', '🐰', '🐇', '🐿️', '🦫', '🦔', '🦇', '🐻', '🐻‍❄️', '🐨', '🐼', '🦥', '🦦', '🦨', '🦘', '🦡', '🦃', '🐔', '🐓', '🐣', '🐤', '🐥', '🐦', '🐧', '🕊️', '🦅', '🦆', '🦢', '🦉', '🦤', '🦩', '🦚', '🦜', '🐦‍⬛', '🪿', '🐦‍🔥', '🐸', '🐊', '🐢', '🦎', '🐍', '🐲', '🐉', '🦕', '🦖', '🐳', '🐋', '🐬', '🦭', '🐟', '🐠', '🐡', '🦈', '🐙', '🐚', '🪼', '🐌', '🦋', '🐛', '🐜', '🐝', '🪲', '🐞', '🦗', '🪳', '🕷️', '🕸️', '🦂', '🦟', '🪰', '🪱', '🦠', '💐', '🌸', '💮', '🪷', '🏵️', '🌹', '🥀', '🌺', '🌻', '🌼', '🌷', '🪻', '🌱', '🪴', '🌲', '🌳', '🌴', '🌵', '🌾', '🌿', '☘️', '🍀', '🍁', '🍂', '🍃', '🪹', '🪺', '🍄','🍞', '🥐', '🥨', '🥑', '🥕', '🌶️','👽'];
+
+        const button = document.querySelector('.fortune-button');
+        const textDiv = document.getElementById('fortuneText');
+
+        button.addEventListener('click', () => {
+                const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+                textDiv.innerHTML = `Кто ты сегодня: <span class="big-emoji">${randomEmoji}</span>`;
+                textDiv.style.display = 'block';
+
+                // Очищаем предыдущий таймер, если он существует
+                if (textDiv.timeoutId) {
+                    clearTimeout(textDiv.timeoutId);
+                }
+
+                // Запускаем новый таймер и сохраняем его ID
+                textDiv.timeoutId = setTimeout(() => {
+                    textDiv.style.display = 'none';
+                }, 3000);
+            });
+    </script>
+
+    <script src="script.js"></script>
+    
+    
+    
+</body>
+
+</html>
+
+<!-- --eerie-black: #1c2321ff;
+--cadet-gray: #7d98a1ff;
+--paynes-gray: #5e6572ff;
+--powder-blue: #a9b4c2ff;
+--antiflash-white: #eef1efff; -->
