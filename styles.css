@@ -20,6 +20,35 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Cygre';
+    src: url('Cygre-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('JetBrainsMono.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceCodePro';
+    src: url('SourceCodePro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCode';
+    src: url('FiraCode.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 html {
     display: flex;
     justify-content: center !important;
@@ -44,6 +73,7 @@ body {
     word-break: break-word;
     background-color: #B9AB99BB;
     height: 100% !important;
+    color: #000000;
     
     
 }
@@ -68,7 +98,7 @@ body {
     padding-left: 70pt;
     font-optical-sizing: auto;
     font-weight: 400;
-    font-style: normal;
+    font-style:normal;
     font-size: 15px !important;
     line-height: 24px !important;
     letter-spacing: 2px;
@@ -112,7 +142,7 @@ body {
 textarea {
     width: 100%;
    height: max(35vh, 200px);
-
+    font-family: /* "JetBrainsMono", */ "SourceCodePro", "FiraCode", monospace;
     padding: 15px;
     box-sizing: border-box;
     border: 1px solid #ddd;
@@ -182,8 +212,10 @@ textarea {
 .work-area::placeholder {
     font-family: "Cygre Light", sans-serif;
     font-size: 14px;
-    color: #8B8B8B;
+    font-weight: 400;
+    color: #7d7d7d;
     padding-left: 0px;
+    letter-spacing: 1px;
 }
 
 textarea:focus {
@@ -203,10 +235,11 @@ button {
     width: fit-content !important;
     font-family: 'Cygre Light', Arial, sans-serif !important;
     font-style: normal;
-    font-weight: 500 !important;
+    font-weight: 400 !important;
     font-size: 17px !important;
     line-height: 20px !important;
     transition: all 0.2s ease;
+    letter-spacing: 1px;
 }
 
 #transformButton:hover {
@@ -313,8 +346,10 @@ select {
     font-style: normal;
     font-size: 16px !important;
     line-height: 24px !important;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     color: white;
+    position: relative;
+    top: 1px;
 }
 
 /* Чекбоксы */
