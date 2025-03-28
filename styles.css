@@ -20,6 +20,12 @@
     font-style: normal;
 }
 
+html {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+}
+
 body {
     font-family: 'Cygre Light', Arial, sans-serif !important;
     font-style: normal !important;
@@ -27,7 +33,7 @@ body {
     font-size: 18px !important;
     line-height: 28px !important;
     display: flex;
-    justify-content: center;
+    justify-content: center !important;
     /* Изменено: Убрано жесткое ограничение ширины, добавлена адаптивность */
     width: 100%;
     /* Было: min(100%, 1500px) */
@@ -36,6 +42,8 @@ body {
     margin: 20pt auto;
     word-break: break-word;
     background-color: #B9AB99BB;
+    height: 100% !important;
+    
 }
 
 .main {
@@ -47,13 +55,13 @@ body {
 }
 
 .all-options {
-    display: flex;
+    display: block;
+    gap: 200px;
     flex-direction: column;
     /* Изменено: Уменьшены отступы для малых экранов */
-    margin: auto 20px;
+    margin: 0 20px;
     /* Было: auto 50px */
     font-family: "Cygre Light", sans-serif;
-    gap: 100px;
     padding-right: 50pt;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -61,16 +69,15 @@ body {
     font-size: 16px !important;
     line-height: 24px !important;
     letter-spacing: 2px;
-    padding-bottom: 50pt;
+    
 
 }
 
 /* Добавлено: Адаптивность для .options */
 .options {
-    display: flex;
+   /*  display: flex;
     flex-direction: column;
-    flex: 1 1 auto;
-    /* Было: flex: 1 1 350px */
+    flex: 1 1 auto; */
     font-family: "Cygre Light", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -78,17 +85,18 @@ body {
     font-size: 16px !important;
     line-height: 24px !important;
     letter-spacing: 2px;
+    padding-top: 5vh;
+    margin-bottom: 25vh;
 }
 
 .options p {
     margin-bottom: 5px;
 }
 
-.options-delete {
-    /* Изменено: Уменьшен отступ для адаптивности */
+/* .options-delete {
     margin-top: 50px;
-    /* Было: 200px */
-}
+   
+} */
 
 .space {
     flex: 1;
@@ -106,6 +114,7 @@ body {
     max-width: 100%;
     /* Было: 800px !important */
     height: 100%;
+    justify-content: center;
 }
 
 textarea {
@@ -135,7 +144,7 @@ textarea {
 
     .all-options {
         margin: 10px;
-        gap: 50px;
+        gap: 70px;
         padding-right: 20pt;
 
     }
@@ -153,23 +162,22 @@ textarea {
         /* Уменьшена высота для малых экранов */
     }
 
-    #img_1 {
+   /*  #img_1 {
         max-width: 100%;
-        /* Полная ширина на малых экранах */
-        max-height: 40%;
+        
     }
 
     #img_2 {
         max-width: 30%;
-        /* Уменьшена ширина */
+        
         max-height: 50%;
-    }
+    } */
 }
 
 @media (min-width: 721px) and (max-width: 1080px) {
     .all-options {
         margin: 15px;
-        gap: 60px;
+        gap: 100px;
         padding-right: 30pt;
     }
 
@@ -184,13 +192,13 @@ textarea {
 }
 
 @media (min-width: 1081px) and (max-width: 1440px) {
-    .container-text {
+    /* .container-text {
         max-width: 85%;
     }
     .all-options {
-        gap: 80px;
+        gap: 120px;
         padding-right: 40pt;
-    }
+    } */
 }
 
 @media (min-width: 1441px) {
@@ -200,7 +208,7 @@ textarea {
         
     }
     .all-options {
-        gap: 100px;
+        gap: 150pt;
         padding-right: 50pt;
     }
 }
@@ -289,7 +297,7 @@ button {
 
 /* Картинки */
 #img_1 {
-    position: fixed;
+    /* position: fixed;
     bottom: 0;
     left: 0;
     max-width: 49%;
@@ -297,19 +305,24 @@ button {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    z-index: -1; */
+
+    position: fixed; /* Фиксируем позицию относительно окна браузера */
+    bottom: 0; /* Прижимаем к нижнему краю */
+    left: 0; /* Прижимаем к левому краю */
     z-index: -1;
+    max-width: 760px !important; /* Задаем базовый размер изображения */
+    height: auto;
 }
 
+
 #img_2 {
-    position: fixed;
-    bottom: 38px;
-    right: 0;
-    max-width: 15%;
-    max-height: 90%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    position: fixed; /* Фиксируем позицию относительно окна браузера */
+    bottom: 0; /* Прижимаем к нижнему краю */
+    right: 0; /* Прижимаем к левому краю */
     z-index: -1;
+    max-width: 240px !important; /* Задаем базовый размер изображения */
+    height: auto;
 }
 
 /* Текст */
