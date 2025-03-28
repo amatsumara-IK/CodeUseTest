@@ -393,7 +393,172 @@ select {
 /*  */
 
 /* Добавлено: Медиазапросы для разных разрешений */
+@media (max-width: 720px) {
+    body {
+        font-size: 16px !important;
+        /* Уменьшен шрифт для малых экранов */
+        flex-direction: column;
+        /* Вертикальное расположение */
 
+    }
+
+    .all-options {
+        margin: 10px;
+
+        padding-right: 20pt;
+
+    }
+
+    .options {
+
+        margin-bottom: 5vh;
+    }
+
+
+    .container-text {
+        margin: 10px;
+    }
+
+    textarea {
+        min-height: 200px;
+        /* Уменьшена высота для малых экранов */
+    }
+
+
+}
+
+@media (min-width: 721px) and (max-width: 1080px) {
+    .all-options {
+        margin: 15px;
+
+        padding-right: 30pt;
+    }
+
+    .container-text {
+        max-width: 90%;
+    }
+
+    .options {
+
+        margin-bottom: 5vh;
+    }
+
+
+
+
+}
+
+@media (min-height: 800px) and (max-height: 1000px) {
+
+    .options {
+
+        margin-bottom: 25vh;
+    }
+
+    .fortune-button {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .fortune-text {
+        text-align: center !important;
+        position: fixed;
+        bottom: 65px;
+        left: 25px;
+        font-size: 13px;
+        color: white;
+        background-color: #775F4E;
+        padding: 2px 10px;
+        border-radius: 5px;
+        display: none;
+    }
+
+    .big-emoji {
+        font-size: 23px;
+    }
+}
+
+@media (min-height: 600px) and (max-height: 799px) {
+
+    .options {
+
+        margin-bottom: 15vh;
+    }
+
+    .fortune-button {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .fortune-text {
+        text-align: center !important;
+        position: fixed;
+        bottom: 65px;
+        left: 25px;
+        font-size: 13px;
+        color: white;
+        background-color: #775F4E;
+        padding: 2px 10px;
+        border-radius: 5px;
+        display: none;
+    }
+
+    .big-emoji {
+        font-size: 23px;
+    }
+
+
+
+}
+
+@media (min-width: 1081px) and (max-width: 1440px) {
+    /* .container-text {
+    max-width: 85%;
+    }
+    */
+
+
+
+
+
+}
+
+@media (max-width: 1441px) {
+    .container-text {
+        max-width: 800px;
+        /* Восстановлено ограничение для больших экранов */
+
+    }
+
+
+}
+
+@media (max-height: 700px) {
+    textarea {
+        height: 200px;
+    }
+}
+
+/* @media (min-height: 600px) {
+
+.fortune-button {
+width: 20px !important;
+height: 20px !important;
+}
+
+.fortune-text {
+text-align: center !important;
+position: fixed;
+bottom: 65px;
+left: 25px;
+font-size: 12px;
+color: white;
+background-color: #775F4E;
+padding: 1px 10px;
+border-radius: 5px;
+display: none;
+}
+} */
 
 
 
