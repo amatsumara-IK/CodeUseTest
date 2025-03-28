@@ -33,7 +33,7 @@ body {
     /* Было: min(100%, 1500px) */
     max-width: 1500px;
     /* Добавлено для ограничения максимальной ширины */
-    margin: 0 auto;
+    margin: 20pt auto;
     word-break: break-word;
     background-color: #B9AB99BB;
 }
@@ -53,12 +53,16 @@ body {
     margin: auto 20px;
     /* Было: auto 50px */
     font-family: "Cygre Light", sans-serif;
+    gap: 100px;
+    padding-right: 50pt;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     font-size: 16px !important;
     line-height: 24px !important;
     letter-spacing: 2px;
+    padding-bottom: 50pt;
+
 }
 
 /* Добавлено: Адаптивность для .options */
@@ -126,10 +130,14 @@ textarea {
         /* Уменьшен шрифт для малых экранов */
         flex-direction: column;
         /* Вертикальное расположение */
+        
     }
 
     .all-options {
         margin: 10px;
+        gap: 50px;
+        padding-right: 20pt;
+
     }
 
     .options-delete {
@@ -161,6 +169,8 @@ textarea {
 @media (min-width: 721px) and (max-width: 1080px) {
     .all-options {
         margin: 15px;
+        gap: 60px;
+        padding-right: 30pt;
     }
 
     .container-text {
@@ -170,11 +180,16 @@ textarea {
     textarea {
         min-height: 250px;
     }
+    
 }
 
 @media (min-width: 1081px) and (max-width: 1440px) {
     .container-text {
         max-width: 85%;
+    }
+    .all-options {
+        gap: 80px;
+        padding-right: 40pt;
     }
 }
 
@@ -182,6 +197,11 @@ textarea {
     .container-text {
         max-width: 800px;
         /* Восстановлено ограничение для больших экранов */
+        
+    }
+    .all-options {
+        gap: 100px;
+        padding-right: 50pt;
     }
 }
 
